@@ -1,0 +1,12 @@
+server:
+  port: "${AUTH_PORT:8081}"
+jwt:
+  key: "eargb;fbw34oiu5r[132t43-]0=cvfA_wREGFJjM4J]-JF4JT-]3FMOOO4TGOOPEWJGQ]A-GW40Ejfo-gp4tt3qpwsionefg[wpio4tn034[fa"
+  access-token-expiration: 10
+  refresh-token-expiration: 100000
+db:
+  host: "localhost"
+  port: "${USER_DB_PORT:5431}"
+  username: "${POSTGRES_USER:user}"
+  password: "${POSTGRES_PASSWORD:password}"
+  database: "${POSTGRES_DB:user_db}"

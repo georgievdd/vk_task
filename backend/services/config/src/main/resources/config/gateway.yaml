@@ -1,0 +1,52 @@
+server:
+  port: ${GATEWAY_PORT:8080}
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://127.0.0.1:3000"
+            allowedMethods:
+              - GET
+              - PUT
+              - POST
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - Content-Type
+              - Authorization
+              - text/plain
+              - Access-Control-Allow-Origin
+            allowCredentials: true
+      routes:
+        - id: test
+          uri: https://ya.ru/
+          predicates:
+            - Path=/api/v1/test/**
+        - id: auth
+          uri: lb://auth
+          predicates:
+            - Path=/api/v1/auth/**
+          filters:
+            - RewritePath=api/v1/auth/(?<remaining>.*), /$\{remaining}
+        - id: user
+          uri: lb://user
+          predicates:
+            - Path=/api/v1/user/**
+          filters:
+            - RewritePath=api/v1/user/(?<remaining>.*), /$\{remaining}
+        - id: cats
+          uri: lb://cats
+          predicates:
+            - Path=/api/v1/cats/**
+          filters:
+            - RewritePath=api/v1/cats/(?<remaining>.*), /$\{remaining}
+
+logging:
+  level:
+    org.springframework.web.reactive.function.client: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.netflix.zuul: DEBUG
