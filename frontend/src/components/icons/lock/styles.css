@@ -1,0 +1,122 @@
+.lock-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+    margin: 0 auto;
+}
+
+.lock-container.shake {
+    animation: lock-container-shake 0.3s ease-in-out;
+}
+
+.lock-handle {
+    transform: translateY(20px);
+    transition: transform 0.2s ease-in-out;
+}
+.lock-body {
+    z-index: 1;
+}
+
+.lock-handle.open {
+    transform: translateY(10px);
+}
+
+#top-spark,
+#middle-spark,
+#bottom-spark {
+    opacity: 0;
+}
+
+.lock-topspark,
+.lock-bottomspark,
+.lock-middlespark {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+}
+
+.lock-topspark {
+    margin-top: 40%;
+    animation: lock-topspark-show 0.345s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.lock-middlespark {
+    margin-top: 60%;
+    animation: lock-middlespark-show 0.33s ease-in-out;
+    animation-fill-mode: forwards;
+}
+.lock-bottomspark {
+    margin-top: 70%;
+    animation: lock-bottomspark-show 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes lock-topspark-show {
+    0% {
+        opacity: 0;
+        transform: translate(-10px, 12px);
+    }
+    15% {
+        opacity: 0;
+        transform: translate(-10px, 12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-22px, 0px);
+    }
+}
+@keyframes lock-middlespark-show {
+    0% {
+        opacity: 0;
+
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-32px);
+    }
+}
+@keyframes lock-bottomspark-show {
+    0% {
+        opacity: 0;
+        transform: translate(0, -22px);
+    }
+    40% {
+        opacity: 0;
+        transform: translate(-10px, -12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-22px, 0px);
+    }
+}
+
+@keyframes lock-container-shake {
+    0% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(20px);
+    }
+    30% {
+        transform: translateX(-20px);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    60% {
+        transform: translateX(-5px);
+    }
+    70% {
+        transform: translateX(3px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

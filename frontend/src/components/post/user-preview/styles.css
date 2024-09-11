@@ -1,0 +1,9 @@
+.post-user-preview-container {
+    width: min-content;
+    height: 20px;
+    position: relative;
+}
+.post-user-preview-container .skeleton {
+    height: 20px;
+    width: 100px;
+}

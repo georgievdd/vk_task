@@ -1,0 +1,9 @@
+.input-container {
+    position: relative;
+    border-bottom: 1px solid black;
+    height: 40px;
+    width: 100%;
+}
+.input-container input {
+    font-size: large;
+}

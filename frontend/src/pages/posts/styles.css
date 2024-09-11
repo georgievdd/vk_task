@@ -1,0 +1,61 @@
+.posts-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    row-gap: 50px;
+}
+
+.posts-container .skeleton {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+}
+
+.posts-container .post-compressed {
+    width: 25%;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.posts-container .post-compressed .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts-container .post-compressed .info .space {
+    height: 25px;
+}
+
+.posts-container .post-compressed .info .text {
+    word-wrap: break-word;
+    max-width: 100%;
+    -webkit-line-clamp: 6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.posts-container .post-compressed .info .header {
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.posts-container .post-compressed .info .time {
+    color: rgb(148, 146, 148);
+}
+
+.posts-container .post-compressed .button-container {
+    display: flex;
+    flex-direction: row-reverse;
+}

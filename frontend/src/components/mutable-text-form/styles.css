@@ -1,0 +1,13 @@
+.mtf-container {
+    max-width: max-content;
+    font-size: inherit;
+    display: block;
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    &:focus {
+        padding: 3px;
+        outline: 1px solid black;
+        border-radius: 4px;
+    }
+}
